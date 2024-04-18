@@ -1,6 +1,6 @@
 setelah db create lakukan "npm run fresh" untuk "npx sequelize db:migrate:undo:all && npx sequelize db:migrate && npx sequelize db:seed:all"
 
-AKUN SUPER ADMIN \n
+AKUN SUPER ADMIN /n
 email: hasannurwakhid.superadmin@gmail.com
 password: 1345
 
