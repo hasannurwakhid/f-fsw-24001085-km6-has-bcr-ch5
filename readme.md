@@ -6,7 +6,7 @@ password: 1345
 
 AKUN ADMIN
 email: hasannurwakhid.admin@gmail.com
-password": 1345
+password: 1345
 
 AKUN USER
 email: hasannurwakhid.user@gmail.com
