@@ -10,11 +10,18 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       manufacture.hasMany(models.car, { foreignKey: "manufacture_id" });
+
+      manufacture.belongsTo(models.user, { foreignKey: "createdBy" });
+      manufacture.belongsTo(models.user, { foreignKey: "deletedBy" });
+      manufacture.belongsTo(models.user, { foreignKey: "updatedBy" });
     }
   }
   manufacture.init(
     {
       name: DataTypes.STRING,
+      createdBy: DataTypes.INTEGER,
+      deletedBy: DataTypes.INTEGER,
+      updatedBy: DataTypes.INTEGER,
     },
     {
       sequelize,

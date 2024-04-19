@@ -10,11 +10,18 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       spec.hasMany(models.spec_transaction, { foreignKey: "spec_id" });
+
+      spec.belongsTo(models.user, { foreignKey: "createdBy" });
+      spec.belongsTo(models.user, { foreignKey: "deletedBy" });
+      spec.belongsTo(models.user, { foreignKey: "updatedBy" });
     }
   }
   spec.init(
     {
       name: DataTypes.STRING,
+      createdBy: DataTypes.INTEGER,
+      deletedBy: DataTypes.INTEGER,
+      updatedBy: DataTypes.INTEGER,
     },
     {
       sequelize,

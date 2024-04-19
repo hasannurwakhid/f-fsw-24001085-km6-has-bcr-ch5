@@ -101,6 +101,7 @@ module.exports = {
         await queryInterface.bulkInsert("transmissions", [
           {
             name: m,
+            createdBy: 1,
             createdAt: new Date(),
             updatedAt: new Date(),
           },
@@ -112,6 +113,7 @@ module.exports = {
         await queryInterface.bulkInsert("manufactures", [
           {
             name: m,
+            createdBy: 1,
             createdAt: new Date(),
             updatedAt: new Date(),
           },
@@ -123,6 +125,7 @@ module.exports = {
         await queryInterface.bulkInsert("types", [
           {
             name: m,
+            createdBy: 1,
             createdAt: new Date(),
             updatedAt: new Date(),
           },
@@ -134,6 +137,7 @@ module.exports = {
         await queryInterface.bulkInsert("options", [
           {
             name: m,
+            createdBy: 1,
             createdAt: new Date(),
             updatedAt: new Date(),
           },
@@ -145,6 +149,7 @@ module.exports = {
         await queryInterface.bulkInsert("specs", [
           {
             name: m,
+            createdBy: 1,
             createdAt: new Date(),
             updatedAt: new Date(),
           },
@@ -204,48 +209,56 @@ module.exports = {
       {
         car_id: 1,
         option_id: 1,
+        createdBy: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         car_id: 1,
         option_id: 2,
+        createdBy: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         car_id: 1,
         option_id: 3,
+        createdBy: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         car_id: 1,
         option_id: 4,
+        createdBy: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         car_id: 2,
         option_id: 1,
+        createdBy: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         car_id: 2,
         option_id: 2,
+        createdBy: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         car_id: 2,
         option_id: 5,
+        createdBy: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         car_id: 2,
         option_id: 6,
+        createdBy: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -255,48 +268,56 @@ module.exports = {
       {
         car_id: 1,
         spec_id: 1,
+        createdBy: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         car_id: 1,
         spec_id: 2,
+        createdBy: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         car_id: 1,
         spec_id: 3,
+        createdBy: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         car_id: 1,
         spec_id: 4,
+        createdBy: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         car_id: 2,
         spec_id: 1,
+        createdBy: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         car_id: 2,
         spec_id: 2,
+        createdBy: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         car_id: 2,
         spec_id: 5,
+        createdBy: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         car_id: 2,
         spec_id: 6,
+        createdBy: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },

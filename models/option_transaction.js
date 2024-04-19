@@ -11,12 +11,19 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       option_transaction.belongsTo(models.option, { foreignKey: "option_id" });
       option_transaction.belongsTo(models.car, { foreignKey: "car_id" });
+
+      option_transaction.belongsTo(models.user, { foreignKey: "createdBy" });
+      option_transaction.belongsTo(models.user, { foreignKey: "deletedBy" });
+      option_transaction.belongsTo(models.user, { foreignKey: "updatedBy" });
     }
   }
   option_transaction.init(
     {
       car_id: DataTypes.INTEGER,
       option_id: DataTypes.INTEGER,
+      createdBy: DataTypes.INTEGER,
+      deletedBy: DataTypes.INTEGER,
+      updatedBy: DataTypes.INTEGER,
     },
     {
       sequelize,
