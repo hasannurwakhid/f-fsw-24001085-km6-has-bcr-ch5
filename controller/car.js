@@ -1,4 +1,5 @@
 const carUsecase = require("../usecase/car");
+const { profile } = require("../usecase/auth");
 
 exports.getCars = async (req, res, next) => {
   try {
@@ -37,6 +38,7 @@ exports.createCar = async (req, res, next) => {
       type_id,
       manufacture_id,
     } = req.body;
+    const createdBy = req.user.id;
     const { image } = req.files;
     if (!model || model == "") {
       return next({
@@ -97,6 +99,7 @@ exports.createCar = async (req, res, next) => {
       transmission_id,
       type_id,
       manufacture_id,
+      createdBy,
     });
 
     res.status(201).json({
@@ -121,6 +124,7 @@ exports.updateCar = async (req, res, next) => {
       type_id,
       manufacture_id,
     } = req.body;
+    const updatedBy = req.user.id;
     const { image } = req.files;
 
     if (!model || model == "") {
@@ -182,6 +186,7 @@ exports.updateCar = async (req, res, next) => {
       transmission_id,
       type_id,
       manufacture_id,
+      updatedBy,
     });
 
     res.status(201).json({
@@ -196,6 +201,10 @@ exports.updateCar = async (req, res, next) => {
 exports.deleteCar = async (req, res, next) => {
   try {
     const { id } = req.params;
+    const deletedBy = req.user.id;
+    await carUsecase.updateCar(id, {
+      deletedBy,
+    });
     const data = await carUsecase.deleteCar(id);
     res.status(200).json({
       message: "Succes",

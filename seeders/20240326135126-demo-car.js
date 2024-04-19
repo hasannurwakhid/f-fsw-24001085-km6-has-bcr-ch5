@@ -166,6 +166,7 @@ module.exports = {
         manufacture_id: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
+        createdBy: 1,
       },
       {
         model: "X5",
@@ -180,6 +181,7 @@ module.exports = {
         manufacture_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
+        createdBy: 1,
       },
       {
         model: "MKZ",
@@ -194,6 +196,7 @@ module.exports = {
         manufacture_id: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
+        createdBy: 1,
       },
     ]);
 

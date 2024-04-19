@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      car.belongsTo(models.user, { foreignKey: "createdBy" });
+      car.belongsTo(models.user, { foreignKey: "deletedBy" });
+      car.belongsTo(models.user, { foreignKey: "updatedBy" });
+
       car.belongsTo(models.transmission, { foreignKey: "transmission_id" });
       car.belongsTo(models.type, { foreignKey: "type_id" });
       car.belongsTo(models.manufacture, { foreignKey: "manufacture_id" });
@@ -33,6 +37,9 @@ module.exports = (sequelize, DataTypes) => {
       type_id: DataTypes.INTEGER,
       year: DataTypes.INTEGER,
       capacity: DataTypes.STRING,
+      createdBy: DataTypes.INTEGER,
+      deletedBy: DataTypes.INTEGER,
+      updatedBy: DataTypes.INTEGER,
     },
     {
       sequelize,
