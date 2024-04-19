@@ -5,12 +5,13 @@ const fileUpload = require("express-fileupload");
 const router = require("./route");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json()); // body -> json
 app.use(
   fileUpload({
     useTempFiles: true,
+    tempFileDir: process.env.NODE_ENV == "development" ? "./tmp" : "/tmp",
   })
 ); // body -> form-data
 app.use(express.static("public"));
