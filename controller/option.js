@@ -28,6 +28,8 @@ exports.getOption = async (req, res, next) => {
 exports.createOption = async (req, res, next) => {
   try {
     const { name } = req.body;
+    const createdBy = req.user.id;
+
     if (!name || name == "") {
       return next({
         message: "Name must be provided",
@@ -37,6 +39,7 @@ exports.createOption = async (req, res, next) => {
 
     const data = await optionUsecase.createOption({
       name,
+      createdBy,
     });
 
     res.status(201).json({
@@ -52,6 +55,8 @@ exports.updateOption = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { name } = req.body;
+    const updatedBy = req.user.id;
+
     if (!name || name == "") {
       return next({
         message: "Name must be provided",
@@ -61,6 +66,7 @@ exports.updateOption = async (req, res, next) => {
 
     const data = await optionUsecase.updateOption(id, {
       name,
+      updatedBy,
     });
 
     res.status(201).json({
@@ -75,6 +81,11 @@ exports.updateOption = async (req, res, next) => {
 exports.deleteOption = async (req, res, next) => {
   try {
     const { id } = req.params;
+    const deletedBy = req.user.id;
+
+    await optionUsecase.updateOption(id, {
+      deletedBy,
+    });
     const data = await optionUsecase.deleteOption(id);
     res.status(200).json({
       message: "Succes",

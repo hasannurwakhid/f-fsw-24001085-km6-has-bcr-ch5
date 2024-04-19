@@ -28,6 +28,8 @@ exports.getTransmission = async (req, res, next) => {
 exports.createTransmission = async (req, res, next) => {
   try {
     const { name } = req.body;
+    const createdBy = req.user.id;
+
     if (!name || name == "") {
       return next({
         message: "Name must be provided",
@@ -37,6 +39,7 @@ exports.createTransmission = async (req, res, next) => {
 
     const data = await transmissionUsecase.createTransmission({
       name,
+      createdBy,
     });
 
     res.status(201).json({
@@ -52,6 +55,8 @@ exports.updateTransmission = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { name } = req.body;
+    const updatedBy = req.user.id;
+
     if (!name || name == "") {
       return next({
         message: "Name must be provided",
@@ -61,6 +66,7 @@ exports.updateTransmission = async (req, res, next) => {
 
     const data = await transmissionUsecase.updateTransmission(id, {
       name,
+      updatedBy,
     });
 
     res.status(201).json({
@@ -75,6 +81,12 @@ exports.updateTransmission = async (req, res, next) => {
 exports.deleteTransmission = async (req, res, next) => {
   try {
     const { id } = req.params;
+    const deletedBy = req.user.id;
+
+    await transmissionUsecase.updateTransmission(id, {
+      deletedBy,
+    });
+
     const data = await transmissionUsecase.deleteTransmission(id);
     res.status(200).json({
       message: "Succes",

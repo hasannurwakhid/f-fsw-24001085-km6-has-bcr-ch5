@@ -28,6 +28,8 @@ exports.getOptionTransaction = async (req, res, next) => {
 exports.createOptionTransaction = async (req, res, next) => {
   try {
     const { car_id, option_id } = req.body;
+    const createdBy = req.user.id;
+
     if (!car_id || car_id == "") {
       return next({
         message: "Car ID must be provided",
@@ -44,6 +46,7 @@ exports.createOptionTransaction = async (req, res, next) => {
     const data = await optionTransactionUsecase.createOptionTransaction({
       car_id,
       option_id,
+      createdBy,
     });
 
     res.status(201).json({
@@ -59,6 +62,8 @@ exports.updateOptionTransaction = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { car_id, option_id } = req.body;
+    const updatedBy = req.user.id;
+
     if (!car_id || car_id == "") {
       return next({
         message: "Car ID must be provided",
@@ -75,6 +80,7 @@ exports.updateOptionTransaction = async (req, res, next) => {
     const data = await optionTransactionUsecase.updateOptionTransaction(id, {
       car_id,
       option_id,
+      updatedBy,
     });
 
     res.status(201).json({
@@ -89,6 +95,12 @@ exports.updateOptionTransaction = async (req, res, next) => {
 exports.deleteOptionTransaction = async (req, res, next) => {
   try {
     const { id } = req.params;
+    const deletedBy = req.user.id;
+
+    await optionTransactionUsecase.updateOptionTransaction(id, {
+      deletedBy,
+    });
+
     const data = await optionTransactionUsecase.deleteOptionTransaction(id);
     res.status(200).json({
       message: "Succes",

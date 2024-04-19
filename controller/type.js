@@ -28,6 +28,8 @@ exports.getType = async (req, res, next) => {
 exports.createType = async (req, res, next) => {
   try {
     const { name } = req.body;
+    const createdBy = req.user.id;
+
     if (!name || name == "") {
       return next({
         message: "Name must be provided",
@@ -37,6 +39,7 @@ exports.createType = async (req, res, next) => {
 
     const data = await typeUsecase.createType({
       name,
+      createdBy,
     });
 
     res.status(201).json({
@@ -52,6 +55,8 @@ exports.updateType = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { name } = req.body;
+    const updatedBy = req.user.id;
+
     if (!name || name == "") {
       return next({
         message: "Name must be provided",
@@ -61,6 +66,7 @@ exports.updateType = async (req, res, next) => {
 
     const data = await typeUsecase.updateType(id, {
       name,
+      updatedBy,
     });
 
     res.status(201).json({
@@ -75,6 +81,12 @@ exports.updateType = async (req, res, next) => {
 exports.deleteType = async (req, res, next) => {
   try {
     const { id } = req.params;
+    const deletedBy = req.user.id;
+
+    await typeUsecase.updateType(id, {
+      deletedBy,
+    });
+
     const data = await typeUsecase.deleteType(id);
     res.status(200).json({
       message: "Succes",

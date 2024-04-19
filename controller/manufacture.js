@@ -28,6 +28,7 @@ exports.getManufacture = async (req, res, next) => {
 exports.createManufacture = async (req, res, next) => {
   try {
     const { name } = req.body;
+    const createdBy = req.user.id;
     if (!name || name == "") {
       return next({
         message: "Name must be provided",
@@ -37,6 +38,7 @@ exports.createManufacture = async (req, res, next) => {
 
     const data = await manufactureUsecase.createManufacture({
       name,
+      createdBy,
     });
 
     res.status(201).json({
@@ -52,6 +54,8 @@ exports.updateManufacture = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { name } = req.body;
+    const updatedBy = req.user.id;
+
     if (!name || name == "") {
       return next({
         message: "Name must be provided",
@@ -61,6 +65,7 @@ exports.updateManufacture = async (req, res, next) => {
 
     const data = await manufactureUsecase.updateManufacture(id, {
       name,
+      updatedBy,
     });
 
     res.status(201).json({
@@ -75,6 +80,10 @@ exports.updateManufacture = async (req, res, next) => {
 exports.deleteManufacture = async (req, res, next) => {
   try {
     const { id } = req.params;
+    const deletedBy = req.user.id;
+    await manufactureUsecase.updateManufacture(id, {
+      deletedBy,
+    });
     const data = await manufactureUsecase.deleteManufacture(id);
     res.status(200).json({
       message: "Succes",

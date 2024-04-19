@@ -28,6 +28,8 @@ exports.getSpec = async (req, res, next) => {
 exports.createSpec = async (req, res, next) => {
   try {
     const { name } = req.body;
+    const createdBy = req.user.id;
+
     if (!name || name == "") {
       return next({
         message: "Name must be provided",
@@ -37,6 +39,7 @@ exports.createSpec = async (req, res, next) => {
 
     const data = await specUsecase.createSpec({
       name,
+      createdBy,
     });
 
     res.status(201).json({
@@ -52,6 +55,8 @@ exports.updateSpec = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { name } = req.body;
+    const updatedBy = req.user.id;
+
     if (!name || name == "") {
       return next({
         message: "Name must be provided",
@@ -61,6 +66,7 @@ exports.updateSpec = async (req, res, next) => {
 
     const data = await specUsecase.updateSpec(id, {
       name,
+      updatedBy,
     });
 
     res.status(201).json({
@@ -75,6 +81,12 @@ exports.updateSpec = async (req, res, next) => {
 exports.deleteSpec = async (req, res, next) => {
   try {
     const { id } = req.params;
+    const deletedBy = req.user.id;
+
+    await specUsecase.updateSpec(id, {
+      deletedBy,
+    });
+
     const data = await specUsecase.deleteSpec(id);
     res.status(200).json({
       message: "Succes",
