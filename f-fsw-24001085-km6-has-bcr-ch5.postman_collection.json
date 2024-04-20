@@ -1,13 +1,14 @@
 {
 	"info": {
-		"_postman_id": "7042a0fb-555a-438d-bbf1-7d1b01e726fc",
+		"_postman_id": "958dcea9-ac54-4275-9aaf-ef99b5154314",
 		"name": "f-fsw-24001085-km6-has-bcr-ch5",
+		"description": "API untuk mengelola data mobil dan akun pengguna",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "33537432"
 	},
 	"item": [
 		{
-			"name": "transmissions",
+			"name": "Transmissions",
 			"item": [
 				{
 					"name": "addTransmission",
@@ -31,17 +32,15 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/transmissions",
-							"protocol": "http",
+							"raw": "{{URL}}api/transmissions",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"transmissions"
 							]
-						}
+						},
+						"description": "Digunakan untuk menambahkan data transmisi mobil."
 					},
 					"response": []
 				},
@@ -57,17 +56,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/transmissions",
-							"protocol": "http",
+							"raw": "{{URL}}api/transmissions",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"transmissions"
 							]
-						}
+						},
+						"description": "Digunakan untuk mendapatkan semua data transmisi mobil"
 					},
 					"response": []
 				},
@@ -83,18 +80,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/transmissions/1",
-							"protocol": "http",
+							"raw": "{{URL}}api/transmissions/1",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"transmissions",
 								"1"
 							]
-						}
+						},
+						"description": "Digunakan untuk mendapatkan data transmisi mobil berdasarkan ID"
 					},
 					"response": []
 				},
@@ -120,18 +115,16 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/transmissions/5",
-							"protocol": "http",
+							"raw": "{{URL}}api/transmissions/5",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"transmissions",
 								"5"
 							]
-						}
+						},
+						"description": "Digunakan untuk mengupdate data transmisi mobil berdasarkan ID"
 					},
 					"response": []
 				},
@@ -147,25 +140,24 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/transmissions/5",
-							"protocol": "http",
+							"raw": "{{URL}}api/transmissions/5",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"transmissions",
 								"5"
 							]
-						}
+						},
+						"description": "Digunakan untuk menghapus data transmisi mobil berdasarkan ID"
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "API untuk mengelola data transmisi mobil. API ini hanya bisa diakses oleh pengguna yang telah login dengan role \"superadmin\" dan \"admin\" dan terotorisasi dengan token yang didapatkan setelahnya."
 		},
 		{
-			"name": "manufactures",
+			"name": "Manufactures",
 			"item": [
 				{
 					"name": "addManufacture",
@@ -189,17 +181,15 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/manufactures",
-							"protocol": "http",
+							"raw": "{{URL}}api/manufactures",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"manufactures"
 							]
-						}
+						},
+						"description": "Digunakan untuk menambahkan data Manufacture mobil"
 					},
 					"response": []
 				},
@@ -215,17 +205,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/manufactures",
-							"protocol": "http",
+							"raw": "{{URL}}api/manufactures",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"manufactures"
 							]
-						}
+						},
+						"description": "Digunakan untuk mendapatkan semua data data Manufacture mobil"
 					},
 					"response": []
 				},
@@ -241,23 +229,21 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/manufactures/1",
-							"protocol": "http",
+							"raw": "{{URL}}api/manufactures/1",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"manufactures",
 								"1"
 							]
-						}
+						},
+						"description": "Digunakan untuk mendapatkan data Manufacture mobil berdasarkan ID"
 					},
 					"response": []
 				},
 				{
-					"name": "updateTransmission",
+					"name": "updateManufacture",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -278,23 +264,21 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/manufactures/11",
-							"protocol": "http",
+							"raw": "{{URL}}api/manufactures/11",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"manufactures",
 								"11"
 							]
-						}
+						},
+						"description": "Digunakan untuk mengupdate data Manufacture mobil"
 					},
 					"response": []
 				},
 				{
-					"name": "deleteTransmission",
+					"name": "deleteManufacture",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -305,25 +289,24 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/manufactures/11",
-							"protocol": "http",
+							"raw": "{{URL}}api/manufactures/11",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"manufactures",
 								"11"
 							]
-						}
+						},
+						"description": "Digunakan untuk menghapus data Manufacture mobil berdasarkan ID"
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Digunakan untuk menambahkan data Manufacture mobil. API ini hanya bisa diakses oleh pengguna yang telah login dengan role \"superadmin\" dan \"admin\" dan terotorisasi dengan token yang didapatkan setelahnya."
 		},
 		{
-			"name": "option-transactions",
+			"name": "Option-transactions",
 			"item": [
 				{
 					"name": "addOptionTransaction",
@@ -352,17 +335,15 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/option-transactions",
-							"protocol": "http",
+							"raw": "{{URL}}api/option-transactions",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"option-transactions"
 							]
-						}
+						},
+						"description": "Digunakan untuk menambahkan data Opsi pada mobil"
 					},
 					"response": []
 				},
@@ -378,17 +359,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/option-transactions",
-							"protocol": "http",
+							"raw": "{{URL}}api/option-transactions",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"option-transactions"
 							]
-						}
+						},
+						"description": "Digunakan untuk mendapatkan semua data Opsi pada mobil"
 					},
 					"response": []
 				},
@@ -404,18 +383,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/option-transactions/1",
-							"protocol": "http",
+							"raw": "{{URL}}api/option-transactions/1",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"option-transactions",
 								"1"
 							]
-						}
+						},
+						"description": "Digunakan untuk mendapatkan data Opsi pada mobil berdasarkan ID"
 					},
 					"response": []
 				},
@@ -446,18 +423,16 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/option-transactions/9",
-							"protocol": "http",
+							"raw": "{{URL}}api/option-transactions/9",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"option-transactions",
 								"9"
 							]
-						}
+						},
+						"description": "Digunakan untuk mengupdate data Opsi pada mobil berdasarkan ID"
 					},
 					"response": []
 				},
@@ -473,25 +448,24 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/option-transactions/9",
-							"protocol": "http",
+							"raw": "{{URL}}api/option-transactions/9",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"option-transactions",
 								"9"
 							]
-						}
+						},
+						"description": "Digunakan untuk menghapus data Opsi pada mobil berdasarkan ID"
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Digunakan untuk menambahkan data Opsi Mobil. API ini hanya bisa diakses oleh pengguna yang telah login dengan role \"superadmin\" dan \"admin\" dan terotorisasi dengan token yang didapatkan setelahnya."
 		},
 		{
-			"name": "spec-transactions",
+			"name": "Spec-transactions",
 			"item": [
 				{
 					"name": "addSpecTransaction",
@@ -520,17 +494,15 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/spec-transactions",
-							"protocol": "http",
+							"raw": "{{URL}}api/spec-transactions",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"spec-transactions"
 							]
-						}
+						},
+						"description": "Digunakan untuk menambahkan data Spesifikasi pada mobil"
 					},
 					"response": []
 				},
@@ -546,17 +518,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/spec-transactions",
-							"protocol": "http",
+							"raw": "{{URL}}api/spec-transactions",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"spec-transactions"
 							]
-						}
+						},
+						"description": "Digunakan untuk mendapatkan semua data Spesifikasi pada mobil"
 					},
 					"response": []
 				},
@@ -572,18 +542,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/spec-transactions/1",
-							"protocol": "http",
+							"raw": "{{URL}}api/spec-transactions/1",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"spec-transactions",
 								"1"
 							]
-						}
+						},
+						"description": "Digunakan untuk mendapatkan data Spesifikasi pada mobil berdasarkan ID"
 					},
 					"response": []
 				},
@@ -614,18 +582,16 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/spec-transactions/9",
-							"protocol": "http",
+							"raw": "{{URL}}api/spec-transactions/9",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"spec-transactions",
 								"9"
 							]
-						}
+						},
+						"description": "Digunakan untuk mengupdate data Spesifikasi pada mobil berdasarkan ID"
 					},
 					"response": []
 				},
@@ -641,25 +607,24 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/spec-transactions/9",
-							"protocol": "http",
+							"raw": "{{URL}}api/spec-transactions/9",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"spec-transactions",
 								"9"
 							]
-						}
+						},
+						"description": "Digunakan untuk menghapus data Spesifikasi pada mobil berdasarkan ID"
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Digunakan untuk menambahkan data Spesifikasi Mobil. API ini hanya bisa diakses oleh pengguna yang telah login dengan role \"superadmin\" dan \"admin\" dan terotorisasi dengan token yang didapatkan setelahnya."
 		},
 		{
-			"name": "options",
+			"name": "Options",
 			"item": [
 				{
 					"name": "addOption",
@@ -683,17 +648,15 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/options",
-							"protocol": "http",
+							"raw": "{{URL}}api/options",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"options"
 							]
-						}
+						},
+						"description": "Digunakan untuk menambahkan data Opsi"
 					},
 					"response": []
 				},
@@ -709,17 +672,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/options",
-							"protocol": "http",
+							"raw": "{{URL}}api/options",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"options"
 							]
-						}
+						},
+						"description": "Digunakan untuk mendapatkan semua data Opsi"
 					},
 					"response": []
 				},
@@ -735,18 +696,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/options/31",
-							"protocol": "http",
+							"raw": "{{URL}}api/options/31",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"options",
 								"31"
 							]
-						}
+						},
+						"description": "Digunakan untuk mendapatkan data Opsi berdasarkan ID"
 					},
 					"response": []
 				},
@@ -772,18 +731,16 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/options/31",
-							"protocol": "http",
+							"raw": "{{URL}}api/options/31",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"options",
 								"31"
 							]
-						}
+						},
+						"description": "Digunakan untuk mengupdate data Opsi berdasarkan ID"
 					},
 					"response": []
 				},
@@ -799,25 +756,24 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/options/31",
-							"protocol": "http",
+							"raw": "{{URL}}api/options/31",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"options",
 								"31"
 							]
-						}
+						},
+						"description": "Digunakan untuk menghapus data Opsi berdasarkan ID"
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Digunakan untuk menambahkan data Opsi. API ini hanya bisa diakses oleh pengguna yang telah login dengan role \"superadmin\" dan \"admin\" dan terotorisasi dengan token yang didapatkan setelahnya."
 		},
 		{
-			"name": "specs",
+			"name": "Specs",
 			"item": [
 				{
 					"name": "addSpec",
@@ -841,17 +797,15 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/specs",
-							"protocol": "http",
+							"raw": "{{URL}}api/specs",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"specs"
 							]
-						}
+						},
+						"description": "Digunakan untuk menambahkan data spesifikasi"
 					},
 					"response": []
 				},
@@ -867,17 +821,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/specs",
-							"protocol": "http",
+							"raw": "{{URL}}api/specs",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"specs"
 							]
-						}
+						},
+						"description": "Digunakan untuk mendapatkan semua data spesifikasi"
 					},
 					"response": []
 				},
@@ -893,18 +845,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/specs/1",
-							"protocol": "http",
+							"raw": "{{URL}}api/specs/1",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"specs",
 								"1"
 							]
-						}
+						},
+						"description": "Digunakan untuk mendapatkan data spesifikasi berdasarkan ID"
 					},
 					"response": []
 				},
@@ -930,18 +880,16 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/specs/34",
-							"protocol": "http",
+							"raw": "{{URL}}api/specs/34",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"specs",
 								"34"
 							]
-						}
+						},
+						"description": "Digunakan untuk mengupdate data spesifikasi berdasarkan ID"
 					},
 					"response": []
 				},
@@ -957,25 +905,24 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/specs/34",
-							"protocol": "http",
+							"raw": "{{URL}}api/specs/34",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"specs",
 								"34"
 							]
-						}
+						},
+						"description": "Digunakan untuk menghapus data spesifikasi berdasarkan ID"
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Digunakan untuk menambahkan data Spesifikasi. API ini hanya bisa diakses oleh pengguna yang telah login dengan role \"superadmin\" dan \"admin\" dan terotorisasi dengan token yang didapatkan setelahnya."
 		},
 		{
-			"name": "types",
+			"name": "Types",
 			"item": [
 				{
 					"name": "addType",
@@ -999,17 +946,15 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/types",
-							"protocol": "http",
+							"raw": "{{URL}}api/types",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"types"
 							]
-						}
+						},
+						"description": "Digunakan untuk menambahkan data Tipe mobil"
 					},
 					"response": []
 				},
@@ -1025,17 +970,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/types",
-							"protocol": "http",
+							"raw": "{{URL}}api/types",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"types"
 							]
-						}
+						},
+						"description": "Digunakan untuk mendapatkan semua data Tipe mobil"
 					},
 					"response": []
 				},
@@ -1051,18 +994,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/types/1",
-							"protocol": "http",
+							"raw": "{{URL}}api/types/1",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"types",
 								"1"
 							]
-						}
+						},
+						"description": "Digunakan untuk mendapatkan data Tipe mobil berdasarkan ID"
 					},
 					"response": []
 				},
@@ -1088,18 +1029,16 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/types/12",
-							"protocol": "http",
+							"raw": "{{URL}}api/types/12",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"types",
 								"12"
 							]
-						}
+						},
+						"description": "Digunakan untuk mengupdate data Tipe mobil berdasarkan ID"
 					},
 					"response": []
 				},
@@ -1115,25 +1054,24 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/types/12",
-							"protocol": "http",
+							"raw": "{{URL}}api/types/12",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"types",
 								"12"
 							]
-						}
+						},
+						"description": "Digunakan untuk menghapus data Tipe mobil berdasarkan ID"
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Digunakan untuk menambahkan data Types. API ini hanya bisa diakses oleh pengguna yang telah login dengan role \"superadmin\" dan \"admin\" dan terotorisasi dengan token yang didapatkan setelahnya."
 		},
 		{
-			"name": "cars",
+			"name": "Cars",
 			"item": [
 				{
 					"name": "getCars",
@@ -1147,17 +1085,15 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/cars",
-							"protocol": "http",
+							"raw": "{{URL}}api/cars",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"cars"
 							]
-						}
+						},
+						"description": "Digunakan untuk menambahkan data Mobil. API (deleteCar, createCar, updateCar) hanya bisa diakses oleh pengguna yang telah login dengan role \"superadmin\" dan \"admin\" dan terotorisasi dengan token yang didapatkan setelahnya. Sedangkan API (getCars, getCar) bisa diakses oleh semua akun pengguna"
 					},
 					"response": []
 				},
@@ -1173,18 +1109,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/cars/1",
-							"protocol": "http",
+							"raw": "{{URL}}api/cars/1",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"cars",
 								"1"
 							]
-						}
+						},
+						"description": "Digunakan untuk mendapatkan data Mobil berdasarkan ID"
 					},
 					"response": []
 				},
@@ -1200,18 +1134,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/cars/3",
-							"protocol": "http",
+							"raw": "{{URL}}api/cars/3",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"cars",
 								"3"
 							]
-						}
+						},
+						"description": "Digunakan untuk menghapus data Mobil berdasarkan ID"
 					},
 					"response": []
 				},
@@ -1277,17 +1209,15 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/cars",
-							"protocol": "http",
+							"raw": "{{URL}}api/cars",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"cars"
 							]
-						}
+						},
+						"description": "Digunakan untuk menambahkan data Mobil"
 					},
 					"response": []
 				},
@@ -1353,22 +1283,21 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/cars/3",
-							"protocol": "http",
+							"raw": "{{URL}}api/cars/3",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"cars",
 								"3"
 							]
-						}
+						},
+						"description": "Digunakan untuk mengupdate data Mobil berdasarkan ID"
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Digunakan untuk menambahkan data Mobil."
 		},
 		{
 			"name": "authUser",
@@ -1383,7 +1312,7 @@
 							"formdata": [
 								{
 									"key": "email",
-									"value": "hasannurwakhid.user@gmail.com",
+									"value": "hasannurwakhid.user2@gmail.com",
 									"type": "text"
 								},
 								{
@@ -1393,29 +1322,27 @@
 								},
 								{
 									"key": "name",
-									"value": "Hasan Nur Wakhid",
+									"value": "Hasan Nur Wakhid 2",
 									"type": "text"
 								},
 								{
 									"key": "photo",
 									"type": "file",
-									"src": "/D:/Screenshot/New folder/Screenshot 2024-03-29 125928.png"
+									"src": "/D:/Screenshot/New folder/Screenshot 2024-03-13 051043.png"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/authUser/register",
-							"protocol": "http",
+							"raw": "{{URL}}api/authUser/register",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"authUser",
 								"register"
 							]
-						}
+						},
+						"description": "Digunakan untuk menambahkan atau registrasi pengguna dengan role \"user\" atau pengguna biasa"
 					},
 					"response": []
 				},
@@ -1434,23 +1361,21 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/authUser/login",
-							"protocol": "http",
+							"raw": "{{URL}}api/authUser/login",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"authUser",
 								"login"
 							]
-						}
+						},
+						"description": "Digunakan untuk pengguna yang akan login menggunakan akun dengan role \"user\" atau pengguna biasa"
 					},
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "getProfile",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1461,18 +1386,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/authUser/profile",
-							"protocol": "http",
+							"raw": "{{URL}}api/authUser/profile",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"authUser",
 								"profile"
 							]
-						}
+						},
+						"description": "Digunakan untuk mendapatkan profil akun pengguna yang telah login menggunakan akun dengan role \"user\" atau pengguna biasa"
 					},
 					"response": []
 				}
@@ -1497,7 +1420,7 @@
 							"formdata": [
 								{
 									"key": "email",
-									"value": "hasannurwakhid.admin@gmail.com",
+									"value": "hasannurwakhid.admin2@gmail.com",
 									"type": "text"
 								},
 								{
@@ -1518,18 +1441,16 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/authAdmin/register",
-							"protocol": "http",
+							"raw": "{{URL}}api/authAdmin/register",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"authAdmin",
 								"register"
 							]
-						}
+						},
+						"description": "Digunakan untuk menambahkan atau registrasi pengguna dengan role \"admin\". API ini hanya bisa diakses oleh pengguna yang telah login dengan role \"superadmin\" dan terotorisasi dengan token yang didapatkan setelahnya."
 					},
 					"response": []
 				},
@@ -1548,23 +1469,21 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/authAdmin/login",
-							"protocol": "http",
+							"raw": "{{URL}}api/authAdmin/login",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"authAdmin",
 								"login"
 							]
-						}
+						},
+						"description": "Digunakan untuk pengguna yang akan login menggunakan akun dengan role \"admin\""
 					},
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "getProfile",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1575,18 +1494,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/authAdmin/profile",
-							"protocol": "http",
+							"raw": "{{URL}}api/authAdmin/profile",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"authAdmin",
 								"profile"
 							]
-						}
+						},
+						"description": "Digunakan untuk mendapatkan profil akun pengguna yang telah login menggunakan akun dengan role \"admin\""
 					},
 					"response": []
 				}
@@ -1605,7 +1522,7 @@
 							"formdata": [
 								{
 									"key": "email",
-									"value": "hasannurwakhid.superadmin@gmail.com",
+									"value": "hasannurwakhid.superadmin2@gmail.com",
 									"type": "text"
 								},
 								{
@@ -1626,18 +1543,16 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/authSuperAdmin/register",
-							"protocol": "http",
+							"raw": "{{URL}}api/authSuperAdmin/register",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"authSuperAdmin",
 								"register"
 							]
-						}
+						},
+						"description": "Digunakan untuk menambahkan atau registrasi pengguna dengan role \"superadmin\""
 					},
 					"response": []
 				},
@@ -1656,23 +1571,21 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/authSuperAdmin/login",
-							"protocol": "http",
+							"raw": "{{URL}}api/authSuperAdmin/login",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"authSuperAdmin",
 								"login"
 							]
-						}
+						},
+						"description": "Digunakan untuk pengguna yang akan login menggunakan akun dengan role \"superadmin\""
 					},
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "getProfile",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1683,18 +1596,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/authSuperAdmin/profile",
-							"protocol": "http",
+							"raw": "{{URL}}api/authSuperAdmin/profile",
 							"host": [
-								"localhost"
+								"{{URL}}api"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"authSuperAdmin",
 								"profile"
 							]
-						}
+						},
+						"description": "Digunakan untuk mendapatkan profil akun pengguna yang telah login menggunakan akun dengan role \"admin\""
 					},
 					"response": []
 				}
