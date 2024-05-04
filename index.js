@@ -5,7 +5,6 @@ const fileUpload = require("express-fileupload");
 const router = require("./route");
 const cors = require("cors");
 
-
 const app = express();
 const port = process.env.PORT || 3000;
 
